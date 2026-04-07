@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meu Launcher Tibia</title>
+    <!-- O Electron Forge injetará o CSS automaticamente aqui -->
+  </head>
+  <body>
+    <div id="app">
+      <!-- O container principal que terá o efeito de desfoque e borda dourada -->
+      <div class="main-container">
+        
+        <!-- CONTROLES DO TOPO (Botão de Fechar personalizado) -->
+        <div class="header-controls">
+          <button id="btn-fechar" title="Fechar Launcher">X</button>
+        </div>
+
+        <!-- LOGO DO SEU SERVIDOR -->
+        <h1 class="logo">NOSSO <span>OT</span></h1>
+        
+        <!-- PAINEL DE STATUS E PROGRESSO -->
+        <div class="status-panel">
+          <p id="status-texto">Pronto para a aventura!</p>
+          
+          <!-- Barra de progresso (Inicia escondida) -->
+          <div id="barra-container">
+            <div id="barra-progresso"></div>
+          </div>
+          
+          <!-- Texto de porcentagem (Inicia escondido) -->
+          <span id="porcentagem-texto">0%</span>
+        </div>
+
+        <!-- BOTÃO PRINCIPAL DE AÇÃO -->
+        <button id="btn-jogar">JOGAR</button>
+
+      </div>
+    </div>
+
+    <!-- O Electron Forge injetará o renderer.js automaticamente aqui -->
+  </body>
+</html>
