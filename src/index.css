@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* IMPORTANTE: Fundo transparente para a borda infinita funcionar */
+  background-color: transparent !important; 
+  
+  /* IMAGEM DE FUNDO DO SEU LAUNCHER */
+  background-image: url('./background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  /* Efeito de Vidro (Blur) e Transparência */
+  background: rgba(15, 15, 15, 0.85); 
+  backdrop-filter: blur(10px); 
+  
+  border: 1px solid #333;
+  border-top: 4px solid #daa520; /* Borda dourada superior */
+  padding: 15px 40px 40px 40px;
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+  text-align: center;
+
+  /* PERMITE ARRASTAR O LAUNCHER CLICANDO NO FUNDO DELE */
+  -webkit-app-region: drag; 
+}
+
+/* CONTROLES DO TOPO (BOTÃO X) */
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#btn-fechar {
+  background: none;
+  border: none;
+  color: #daa520;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.2s;
+  
+  /* IMPORTANTE: Botões NÃO podem ser arrastáveis, senão o clique não funciona */
+  -webkit-app-region: no-drag; 
+}
+
+#btn-fechar:hover {
+  color: #ff4444;
+}
+
+/* LOGO E TEXTOS */
+.logo {
+  font-size: 32px;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+  color: #f0f0f0;
+  text-shadow: 3px 3px 6px #000;
+  /* Evita que o clique na logo tente arrastar a janela */
+  -webkit-app-region: no-drag;
+}
+
+.logo span {
+  color: #daa520;
+}
+
+.status-panel {
+  margin-bottom: 25px;
+  -webkit-app-region: no-drag;
+}
+
+#status-texto {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+/* BARRA DE PROGRESSO */
+#barra-container {
+  width: 100%;
+  height: 14px;
+  background: #1a1a1a;
+  border-radius: 7px;
+  border: 1px solid #444;
+  margin-bottom: 8px;
+  display: none; /* Só aparece no update */
+  overflow: hidden;
+}
+
+#barra-progresso {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #daa520, #ffd700);
+  box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
+  transition: width 0.3s ease;
+}
+
+#porcentagem-texto {
+  font-size: 13px;
+  color: #daa520;
+  font-weight: bold;
+}
+
+/* BOTÃO JOGAR */
+#btn-jogar {
+  background: linear-gradient(180deg, #daa520 0%, #8a6508 100%);
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  padding: 16px 70px;
+  font-size: 19px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #5c4306;
+  transition: all 0.2s;
+  
+  /* IMPORTANTE: Botões NÃO podem ser arrastáveis */
+  -webkit-app-region: no-drag; 
+}
+
+#btn-jogar:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ffd700 0%, #daa520 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.5);
+}
+
+#btn-jogar:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #5c4306;
+}
+
+#btn-jogar:disabled {
+  background: #333;
+  color: #666;
+  box-shadow: none;
+  cursor: not-allowed;
+}
